@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>KUKA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <script src="util_loadingbar.js"></script>
+    <script src="util_cube.js"></script>
+    <script src="util_square.js"></script>
+    <script src="util_curtain.js"></script>
+    <script src="util_spiral.js"></script>
+    <script src="util_colors.js"></script>
+    <script src="util_letter2vec.js"></script>
+    <script src="canvas.js"></script>
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <div class="Canvas">
+            <canvas width="800" height="600"></canvas>
+        </div>
+
+        <div class="Connection">
+
+            <div id="log"></div>
+
+            <button id="connect">Connect</button>
+            <button disabled id="disconnect">Disconnect</button>
+            <input id="console" type="text" size="12">
+
+        </div>
+
+        <div class="Preview">
+
+            <fieldset>
+                <legend>Image preview</legend>
+                <img id="preview-image" src="img/kuka.png" />
+            </fieldset>
+
+        </div>
+
+        <div class="Settings">
+
+            <fieldset>
+                <legend>Settings</legend>
+                <p>Search engine:
+                    <select id="engine-selector">
+                        <option value='Yandex'>Yandex</option>
+                        <option value='Google'>Google</option>
+                    </select>
+                </p>
+                <hr>
+                <p><input type="checkbox" id="dither"> Image dithering</p>
+                <p><input type="checkbox" id="inputlag" checked> Emulate input lag</p>
+                <p><input type="checkbox" id="autoguess" checked> Auto-guessing</p>
+                <p><input type="checkbox" id="autorate" checked> Auto-rate &nbsp;<input type="checkbox" id="autokick"
+                        checked> Auto-kick</p>
+                <p><input type="checkbox" id="sound" checked> Sound</p>
+                <p><input type="checkbox" id="filter" checked> Spam filter + blacklist</p>
+            </fieldset>
+        </div>
+
+        <div class="In-game">
+
+            <div id="playerslist"></div>
+
+            <div class="Stats">
+                <div id="word"></div>
+                <div class="Timer">⏰ <span id="timer">0</span></div>
+                <div class="Round">Round <span id="round">0 of 0</span></div>
+            </div>
+
+            <div class="Chat">
+
+                <fieldset id="chatbox" disabled="disabled">
+                    <div id="chat-area"></div>
+                    <span class='blockedmsg'>Blocked messages: <span id='blockedmsg'>0</span></span>
+                </fieldset>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="kuka.js"></script>
+</body>
+
+</html>
