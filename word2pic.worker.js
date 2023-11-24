@@ -121,7 +121,6 @@ onmessage = async e => {
             //Yandex (поиск по клипартам)
             let resp = await fetch(`https://yandex.ru/images/search?text=${word}&type=clipart&nomisspell=1`);
             page = await resp.text();
-            console.log(page)
             reg = /&quot;\/\/([\w\/\-\.\?=]+)&amp;n=13/g;
 
         }
